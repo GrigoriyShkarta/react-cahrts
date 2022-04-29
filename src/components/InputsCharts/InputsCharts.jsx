@@ -24,8 +24,6 @@ const InputsCharts = ({updateDataX, updateDataY, blurDataX, blurDataY}) => {
     const onSelectY = (event) => {
         if (event.key === "Enter") {
             updateDataY(event.currentTarget.value.split(','));
-        } else {
-
         }
     }
 
