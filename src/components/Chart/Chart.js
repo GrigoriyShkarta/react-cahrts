@@ -72,7 +72,7 @@ const Chart = () => {
 
     return (
         <div className="container">
-            <InputsCharts updateDataX={updateDataX} updateDataY={updateDataY}/>
+            <InputsCharts updateDataX={updateDataX} updateDataY={updateDataY} blurDataX={updateDataX} blurDataY={updateDataX}/>
             <ChartsPopup items={items} toggleChart={toggleChart}/>
             {chart === 0 ? <Bar options={options} data={data}/> : null}
             {chart === 1 ? <Line options={options} data={data}/> : null}

@@ -2,15 +2,13 @@ import {useEffect, useRef, useState} from "react";
 
 import './InputsCharts.scss'
 
-const InputsCharts = ({updateDataX, updateDataY}) => {
-    const [labels, setLabels] = useState([]);
-    const [numbers, setNumbers] = useState([]);
+const InputsCharts = ({updateDataX, updateDataY, blurDataX, blurDataY}) => {
 
-    useEffect(() => {
-        document.body.addEventListener('click', updateData)
-    }, [])
-
-    const inputRef = useRef();
+    // useEffect(() => {
+    //     document.body.addEventListener('click', updateData)
+    // }, [])
+    //
+    // const inputRef = useRef();
 
     const updateData = (event) => {
         event.currentTarget.value.split(',')
@@ -32,19 +30,20 @@ const InputsCharts = ({updateDataX, updateDataY}) => {
     }
 
     const updChartY = (event) => {
-        setNumbers(event.currentTarget.value.split(','))
+        blurDataX(event.currentTarget.value.split(','))
     }
 
     const updChartX = (event) => {
-        setLabels(event.target.value.split(','))
+        blurDataY(event.target.value.split(','))
     }
 
     return (
-        <div className="inputs" ref={inputRef}>
-            <input onKeyDown={onSelectX} onBlur={onSelectX} placeholder="X axis labels"/>
-            <input onKeyPress={onSelectY} onBlur={onSelectY} placeholder="Y axis labels"/>
+        <div className="inputs" >
+            <input onKeyDown={onSelectX} onBlur={updChartY} placeholder="X axis labels"/>
+            <input onKeyDown={onSelectY} onBlur={updChartX} placeholder="Y axis labels"/>
         </div>
     );
 };
+
 
 export default InputsCharts;
