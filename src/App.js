@@ -1,10 +1,12 @@
 import {useState} from "react";
 
 import {Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend,
-    PointElement, LineElement,} from 'chart.js';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+        PointElement, LineElement,} from 'chart.js';
+import {Bar, Line} from 'react-chartjs-2';
 
 import {Checked, InputsCharts} from "./components";
+
+import './scss/app.scss';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title,
     Tooltip, Legend);
@@ -74,9 +76,7 @@ function App() {
             <div className="chart">
                 {chart === 0 ? <Bar options={options} data={data}/> : null}
                 {chart === 1 ? <Line options={options} data={data}/> : null}
-                {chart === 2 ? <Pie options={options} data={data}/> : null}
             </div>
-            {/*<Checked items={items} toggleChart={toggleChart}/>*/}
             <Checked items={items} toggleChart={toggleChart}/>
         </div>
     );

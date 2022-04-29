@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 
-import './InputsCharts.scss'
+import '../scss/components/_inputsCharts.scss'
 
 const InputsCharts = ({updateDataX, updateDataY, blurDataX, blurDataY}) => {
 

@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-import './Cheked.scss'
+import '../scss/components/_cheked.scss'
 
 const Checked = ({items, toggleChart}) => {
     const [activeItem, setActiveItem] = useState(0);
