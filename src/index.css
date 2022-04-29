@@ -76,10 +76,11 @@ a {
   left: 50%;
   top: 50%;
   width: 1200px;
-  height: 800px;
+  height: 700px;
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 20px #f3f3f3;
   border: 1px solid #F1F1F1;
+  border-radius: 15px;
   padding: 50px;
   background-color: white;
 }
@@ -93,5 +94,6 @@ header {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: black;
-  margin-top: 50px;
+  margin: 50px auto;
+  width: 700px;
 }

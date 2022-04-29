@@ -4,9 +4,7 @@ import {Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Ti
     PointElement, LineElement,} from 'chart.js';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
-import ChartsPopup from "./components/ChartsPopup/ChartsPopup";
-import InputsCharts from "./components/InputsCharts/InputsCharts";
-
+import {Checked, InputsCharts} from "./components";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title,
     Tooltip, Legend);
@@ -17,7 +15,7 @@ function App() {
     const [numbers, setNumbers] = useState([]);
     const [chart, setChart] = useState(0)
 
-    const items = ['bar', 'line', 'pie']
+    const items = ['bar', 'line']
 
     const updateDataX = (value) => {
         setLabels(value)
@@ -26,7 +24,6 @@ function App() {
     const updateDataY = (value) => {
         setNumbers(value)
     }
-
 
     const toggleChart = (index) => {
         setChart(index)
@@ -73,13 +70,14 @@ function App() {
         <div className="container">
             <header>
                 <InputsCharts updateDataX={updateDataX} updateDataY={updateDataY} blurDataX={updateDataX} blurDataY={updateDataY}/>
-                <ChartsPopup items={items} toggleChart={toggleChart}/>
             </header>
             <div className="chart">
                 {chart === 0 ? <Bar options={options} data={data}/> : null}
                 {chart === 1 ? <Line options={options} data={data}/> : null}
                 {chart === 2 ? <Pie options={options} data={data}/> : null}
             </div>
+            {/*<Checked items={items} toggleChart={toggleChart}/>*/}
+            <Checked items={items} toggleChart={toggleChart}/>
         </div>
     );
 }

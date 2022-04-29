@@ -1,0 +1,17 @@
+.wrapperRadio {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  margin: 10px;
+}
+
+.radio {
+  cursor: pointer;
+
+  &__input {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+}
