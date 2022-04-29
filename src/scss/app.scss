@@ -1,6 +1,5 @@
 @import "libs/normalize";
 @import "libs/animation";
-@import "./adaptive";
 
 .container {
   position: absolute;
@@ -28,3 +27,5 @@ header {
   margin: 50px auto;
   width: 95%;
 }
+
+@import "chartAdaptive";

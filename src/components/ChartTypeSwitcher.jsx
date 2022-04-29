@@ -2,7 +2,7 @@ import {useState} from "react";
 
 import '../scss/components/_cheked.scss'
 
-const Checked = ({items, toggleChart}) => {
+const ChartTypeSwitcher = ({items, toggleChart}) => {
     const [activeItem, setActiveItem] = useState(0);
 
     const onSelectItem = (index) => {
@@ -35,4 +35,4 @@ const Checked = ({items, toggleChart}) => {
     );
 };
 
-export default Checked;
+export default ChartTypeSwitcher;

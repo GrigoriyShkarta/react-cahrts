@@ -1,2 +1,3 @@
-export {default as Checked} from "./Checked";
-export {default as InputsCharts} from "./InputsCharts"
+export {default as ChartInputs} from "./ChartInputs";
+export {default as ChartTypeSwitcher} from "./ChartTypeSwitcher"
+export {default as Chart} from "./Chart"
