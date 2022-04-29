@@ -2,32 +2,33 @@ import {useEffect, useRef, useState} from "react";
 
 import './ChartsPopup.scss'
 
-const ChartsPopup = ({items}) => {
+const ChartsPopup = ({items, toggleChart}) => {
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [activeItem, setActiveItem] = useState(0);
 
     useEffect(() => {
-        document.body.addEventListener('click', handleOutsideClick)
-    }, [visiblePopup])
+        document.body.addEventListener('click', handleOutsideClick);
+    }, [visiblePopup]);
 
     const chartRef = useRef();
 
-
-    const activeLabel = items[0]
+    const activeLabel = items[activeItem];
 
     const handleOutsideClick = (e) => {
         if (!e.path.includes(chartRef.current)) {
-            setVisiblePopup(false)
+            setVisiblePopup(false);
         }
-    }
+    };
 
     const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup);
     };
 
     const onSelectItem = (index) => {
-        setActiveItem(index)
-    }
+        setActiveItem(index);
+        setVisiblePopup(false);
+        toggleChart(index)
+    };
 
     return (
         <div ref={chartRef} className="sort">

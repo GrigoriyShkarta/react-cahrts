@@ -1,5 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 
+import './InputsCharts.scss'
+
 const InputsCharts = ({updateDataX, updateDataY}) => {
     const [labels, setLabels] = useState([]);
     const [numbers, setNumbers] = useState([]);
@@ -17,7 +19,6 @@ const InputsCharts = ({updateDataX, updateDataY}) => {
     const onSelectX = (event) => {
         if (event.key === "Enter") {
             updateDataX(event.currentTarget.value.split(','))
-            console.log('hi')
         }
 
     }
@@ -39,9 +40,9 @@ const InputsCharts = ({updateDataX, updateDataY}) => {
     }
 
     return (
-        <div ref={inputRef}>
-            <label>X axis labels</label><input onKeyDown={onSelectX} onBlur={onSelectX}/>
-            <label>Y axis labels</label><input onKeyPress={onSelectY} onBlur={onSelectY}/>
+        <div className="inputs" ref={inputRef}>
+            <input onKeyDown={onSelectX} onBlur={onSelectX} placeholder="X axis labels"/>
+            <input onKeyPress={onSelectY} onBlur={onSelectY} placeholder="Y axis labels"/>
         </div>
     );
 };

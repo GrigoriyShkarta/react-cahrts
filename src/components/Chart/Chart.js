@@ -1,41 +1,25 @@
 import {useState} from "react";
 
-import {Chart as ChartJS,
-        CategoryScale,
-        LinearScale,
-        BarElement,
-        ArcElement,
-        Title,
-        Tooltip,
-        Legend,
-        PointElement,
-        LineElement,} from 'chart.js';
-import {Bar, Pie, Line} from 'react-chartjs-2';
+import {Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend,
+        PointElement, LineElement,} from 'chart.js';
+import {Bar, Line, Pie} from 'react-chartjs-2';
 
 import ChartsPopup from "../ChartsPopup/ChartsPopup";
-
-import './Chart.scss'
 import InputsCharts from "../InputsCharts/InputsCharts";
 
+import './Chart.scss'
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    BarElement,
-    ArcElement,
-    Title,
-    Tooltip,
-    Legend
-);
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, Title,
+    Tooltip, Legend);
 
 
 const Chart = () => {
     const [labels, setLabels] = useState([]);
     const [numbers, setNumbers] = useState([]);
+    const [chart, setChart] = useState(0)
 
-    const items = ['bar', 'line', 'doughnut']
+    const items = ['bar', 'line', 'pie']
 
     const updateDataX = (value) => {
         setLabels(value)
@@ -43,6 +27,10 @@ const Chart = () => {
 
     const updateDataY = (value) => {
         setNumbers(value)
+    }
+
+    const toggleChart = (index) => {
+        setChart(index)
     }
 
     const options = {
@@ -85,8 +73,10 @@ const Chart = () => {
     return (
         <div className="container">
             <InputsCharts updateDataX={updateDataX} updateDataY={updateDataY}/>
-            {/*<ChartsPopup items={items}/>*/}
-            <Bar options={options} data={data}/>
+            <ChartsPopup items={items} toggleChart={toggleChart}/>
+            {chart === 0 ? <Bar options={options} data={data}/> : null}
+            {chart === 1 ? <Line options={options} data={data}/> : null}
+            {chart === 2 ? <Pie options={options} data={data}/> : null}
         </div>
     );
 };
