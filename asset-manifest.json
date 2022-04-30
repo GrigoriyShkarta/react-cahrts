@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-cahrts/static/css/main.f21956ad.css",
+    "main.js": "/react-cahrts/static/js/main.84954129.js",
+    "index.html": "/react-cahrts/index.html",
+    "main.f21956ad.css.map": "/react-cahrts/static/css/main.f21956ad.css.map",
+    "main.84954129.js.map": "/react-cahrts/static/js/main.84954129.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f21956ad.css",
+    "static/js/main.84954129.js"
+  ]
+}
