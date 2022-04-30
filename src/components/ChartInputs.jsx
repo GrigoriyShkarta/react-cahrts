@@ -28,8 +28,10 @@ const ChartInputs = ({updateDataX, updateDataY}) => {
 
     return (
         <div className="inputs" >
-            <input onKeyDown={onEnterX} onBlur={onBlurX} placeholder="X axis labels"/>
-            <input onKeyDown={onEnterY} onBlur={onBlurY} placeholder="Y axis labels"/>
+            <span>Ось Х</span>
+            <input onKeyDown={onEnterX} onBlur={onBlurX} placeholder="Введите данные через запятую"/>
+            <span>Ось У</span>
+            <input onKeyDown={onEnterY} onBlur={onBlurY} placeholder="Введите данные через запятую"/>
         </div>
     );
 };

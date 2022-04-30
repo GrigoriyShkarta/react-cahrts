@@ -1,13 +1,4 @@
-
-
-export function getChartData({
-        labels,
-        numbers
-    })
-
-
-
-{
+export function getChartData({labels, numbers}) {
     return {
         labels,
         numbers,

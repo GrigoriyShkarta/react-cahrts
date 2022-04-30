@@ -15,11 +15,6 @@
   background-color: white;
 }
 
-header {
-  display: flex;
-  justify-content: space-around;
-}
-
 .chart {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -28,4 +23,4 @@ header {
   width: 95%;
 }
 
-@import "chartAdaptive";
+@import "./chartAdaptive";

@@ -1,35 +1,51 @@
 /*=============  Desktop First  =============*/
+
+/* Custom Media */
+@media only screen and  (max-width: 1500px) {
+  .container {
+    height: 70%;
+  }
+}
+
 /* Large Device, Wide Screens */
 @media only screen and (max-width: 1200px) {
   .container {
     left: 40%;
     top: 49%;
     width: 74%;
-    height: 85%;
+    height: 73%;
     transform: translate(-36%, -50%);
   }
   .inputs input {
     width: 100%;
     margin-bottom: 10px;
   }
+
+  .chart {
+    margin: 13px auto;
+  }
 }
+
 /* Medium Devices, Desktops */
+
 @media only screen and (max-width: 992px) {
   .container {
-    max-height: 70%;
+    left: 39%;
+    top: 50%;
+    width: 83%;
+    height: 62%;
+  }
+
+  .chart {
+    width: 83%;
   }
 }
 /* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  .chart {
 
+@media only screen and (max-width: 768px) {
+  .container {
+    left: 37.7%;
+    width: 91%;
   }
 }
-/* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
 
-}
-/* Custom, Iphone Retina */
-@media only screen and (max-width: 320px) {
-
-}

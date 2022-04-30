@@ -11,18 +11,21 @@ function App() {
     const [numbers, setNumbers] = useState([]);
     const [chartType, setChart] = useState(0);
 
+    /**
+     * Просто добавь название графика
+     * Импорты графиков находятся в папке utils
+     */
+
     const items = ['bar', 'line'];
 
     const chartData = getChartData({labels, numbers});
 
     return (
         <div className="container">
-            <header>
-                <ChartInputs
-                    updateDataX={setLabels}
-                    updateDataY={setNumbers}
-                />
-            </header>
+            <ChartInputs
+                updateDataX={setLabels}
+                updateDataY={setNumbers}
+            />
             <div className="chart">
                 <Chart
                     data={chartData}

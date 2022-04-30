@@ -20,7 +20,6 @@ const Chart = ({type, data})=> {
 
     return (
         <>
-            gg
             {getChart(type, data)}
         </>
     );
