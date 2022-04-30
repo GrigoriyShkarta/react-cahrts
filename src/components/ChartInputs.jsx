@@ -1,7 +1,7 @@
 import '../scss/components/_inputsCharts.scss';
 
 const getValues = (event) => {
-    return event.currentTarget.value.split(',')
+    return event.currentTarget.value.split(',');
 }
 
 const ChartInputs = ({updateDataX, updateDataY}) => {

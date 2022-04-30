@@ -7,7 +7,7 @@ const ChartTypeSwitcher = ({items, toggleChart}) => {
 
     const onSelectItem = (index) => {
         setActiveItem(index);
-        toggleChart(index)
+        toggleChart(index);
     };
 
     const renderCheckbox = items.map((item, index) =>
